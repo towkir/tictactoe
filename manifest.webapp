@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "name": "TicTacToe",
+  "description": "The simplest tic tac toe game with 2 player (pass n play) mode.",
+  "launch_path": "/index.html",
+  "icons": {
+    "16":  "/icons/icon_16.png",
+    "48":  "/icons/icon_48.png",
+    "60":  "/icons/icon_60.png",
+    "128": "/icons/icon_128.png",
+    "256": "/icons/icon_256.png",
+    "512": "/icons/icon_512.png"
+  },
+  "developer": {
+    "name": "Towkir Ahmed"
+  },
+  "default_locale": "en"
+}

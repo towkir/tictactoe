@@ -1,0 +1,128 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  font-family: fira sans;
+}
+
+
+body {
+  background: #2C393B;
+  color: white;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.header {
+  background: rgba(34, 44, 45, 0.9);
+  height: 50px;
+  width:96%;
+  max-width: 400px;
+  padding: 5px;
+  margin: 2% auto;
+  font-size: 30px;
+  border: 1px solid #222C2D;
+}
+
+.status_box {
+  background: rgba(34, 44, 45, 0.5);
+  height: 90px;
+  width:96%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 2% auto;
+  font-size: 14px;
+  border: 1px solid #222C2D;
+  line-height: 20px;
+}
+
+.status_box img {
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+}
+
+.exit, .reset {
+	height: 40px;
+	width: 40px;
+	float: left;
+	background-image: url("images/exit.png")
+}
+.reset {
+	background-image: url("images/reset.png");
+	float: right;
+}
+
+.board {
+  height: 290px;
+  width: 290px;
+  margin: 5px auto;
+  padding: 1px;
+  color:gray;
+}
+
+.box {
+  height: 96px;
+  width: 96px;
+  border-color: black;
+  float: left;
+  background-size: 100%;  
+}
+
+
+
+.one {
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+}
+
+.two {
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  border-right: 2px solid; 
+}
+
+.three {
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+}
+
+.four {
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-right: 2px solid;  
+}
+
+.five {
+  border: 2px solid;
+}
+
+.six {
+  border-top: 2px solid;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+}
+
+.seven {
+  border-top: 2px solid;
+  border-right: 2px solid;  
+}
+
+.eight{
+  border-top: 2px solid;
+  border-right: 2px solid;  
+  border-left: 2px solid;
+}
+
+.nine {
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+
+
+/*--------------------------------
+               ||
+               ||
+--------------------------------*/
