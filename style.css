@@ -1,125 +1,175 @@
 * {
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
-  font-family: fira sans;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Fira sans;
+  cursor: default;
 }
-
 
 body {
-  background: #2C393B;
+  background-color: #424F5A;
   color: white;
+  overflow: hidden;
 }
 
-div {
-  box-sizing: border-box;
+.drawer {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: -65%;
+  top: 0%;
+  width:65%;
+  overflow-x: hidden;
+  height: 100%;
+  box-shadow: -7px 0 9px -7px black inset;
+  transition: .5s;
+}
+
+.drawer ul li {
+  background-color: rgba(0, 0, 0, 0.2);
+  list-style: none;
+  font-size: 6vw;
+  line-height: 8vw;
+  padding: 3vw;
+  border-bottom: 1px solid black;
+  padding-left:10vw;
+}
+
+.drawer ul li:first-child::before {
+  content: "";
+  background-size: 100%;
+  background-image: url(icons/icon_512.png);
+  width: 12vw;
+  height: 12vw;
+  float: left;
+  margin-right: 2vw;
+}
+
+.drawer ul li:first-child {
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 8vw;
+  padding-left: 6vw;
+  line-height: 12vw;
+}
+
+.drawer ul li:last-child {
+  border-bottom: none;
+}
+
+
+
+#gamefield {
+    width: 100vw;
+    min-width: 320px;
+    height: 100%;
+  transition: .5s;
 }
 
 .header {
-  background: rgba(34, 44, 45, 0.9);
-  height: 50px;
+  background: rgba(0, 0, 0, 0.3);
   width:96%;
-  max-width: 400px;
-  padding: 5px;
+  height: 14vw;
+  padding: 1%;
   margin: 2% auto;
-  font-size: 30px;
-  border: 1px solid #222C2D;
+  font-size: 8vw;
+  line-height: 13vw;
 }
 
 .status_box {
-  background: rgba(34, 44, 45, 0.5);
-  height: 90px;
+  background: rgba(0, 0, 0, 0.4);
   width:96%;
-  max-width: 400px;
-  padding: 10px;
-  margin: 2% auto;
-  font-size: 14px;
-  border: 1px solid #222C2D;
-  line-height: 20px;
+  padding: 3vw;
+  margin: 2vh auto;
+  font-size: 3vh;
+  line-height: 4vh;
+  height:25vw;
 }
 
-.status_box img {
-  height: 20px;
-  width: 20px;
-  vertical-align: middle;
+.x, .o {
+  display: inline;
+  height: 4vh;
+  width: 4vh;
+  background-image: url("images/players.png");
+  background-size: 300%;
+  background-position: 200% 0;
+  margin:0 1vh 0 1vh;
+  float: left;
+}
+.o {
+  background-position: 100% 0;
 }
 
-.exit, .reset {
-	height: 40px;
-	width: 40px;
+#menu, #reset {
+  width: 12vw;
+	height: 12vw;
 	float: left;
-	background-image: url("images/exit.png")
+	background-image: url("images/menu_icons.png");
+  background-size: 300%;  
 }
-.reset {
-	background-image: url("images/reset.png");
+
+#reset {
+	background-position: 100% 0;
 	float: right;
 }
 
-.board {
-  height: 290px;
-  width: 290px;
-  margin: 5px auto;
-  padding: 1px;
-  color:gray;
+#game::before, #scores::before, #settings::before, #help::before, #about::before, #exit::before {
+  content: "";
+  height: 8vw;
+  width: 8vw;
+  float: left;
+  margin-right: 2vw;
+  background-image: url("images/navigation_icons.png");
+  background-size: 600%;
 }
+
+#scores::before {
+  background-position: -100% 0;
+}
+#settings::before {
+  background-position: -200% 0;
+}
+#help::before {
+  background-position: -300% 0;
+}
+#about::before {
+  background-position: -400% 0;
+}
+#exit::before {
+  background-position: -500% 0;
+}
+
+#settingsField {
+  
+}
+
+#scoresField {
+  
+}
+
+#helpField {
+  
+}
+
+#aboutField {
+  
+}
+
+.board {
+  position: relative;
+  width: 90vw;
+  height: 90vw;
+  margin: 4vw auto;
+  background-image: url("images/BoardBack.png");
+  background-size: 100%;
+  }
 
 .box {
-  height: 96px;
-  width: 96px;
-  border-color: black;
+  height: 33.33%;
+  width: 33.33%;
   float: left;
-  background-size: 100%;  
+  background-image: url("images/players.png");
+  background-size: 300%;
 }
 
-
-
-.one {
-  border-right: 2px solid;
-  border-bottom: 2px solid;
-}
-
-.two {
-  border-left: 2px solid;
-  border-bottom: 2px solid;
-  border-right: 2px solid; 
-}
-
-.three {
-  border-left: 2px solid;
-  border-bottom: 2px solid;
-}
-
-.four {
-  border-top: 2px solid;
-  border-bottom: 2px solid;
-  border-right: 2px solid;  
-}
-
-.five {
-  border: 2px solid;
-}
-
-.six {
-  border-top: 2px solid;
-  border-left: 2px solid;
-  border-bottom: 2px solid;
-}
-
-.seven {
-  border-top: 2px solid;
-  border-right: 2px solid;  
-}
-
-.eight{
-  border-top: 2px solid;
-  border-right: 2px solid;  
-  border-left: 2px solid;
-}
-
-.nine {
-  border-top: 2px solid;
-  border-left: 2px solid;
-}
 
 
 /*--------------------------------

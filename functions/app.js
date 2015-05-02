@@ -7,7 +7,7 @@ var turn = 0; //is used for checking players turns...
 
 var box = document.getElementsByClassName("box"); // one variable for all nine boxes...
 var board = document.getElementById("board");
-var refreshButton = document.getElementById("refresh");
+var resetButton = document.getElementById("reset");
 var exitButton = document.getElementById("exit");
 //this function rotates the board randomly ...
 function rotateBoard() {
@@ -27,7 +27,6 @@ function rotateBoard() {
 //puts them two together to load while window loads.......
 function startup() {
     rotateBoard();
-    //planning for some new (while updates later)
 }
 
 
@@ -53,13 +52,7 @@ function startup() {
 //	    5 |  5  | 5    = 15
 //	 -----+-----+----
 //      5 |  5  | 5    = 15
-//      
-//
-//	
-//
-//
-//
-//
+
 
 function reload(){
 	location.reload(true);
@@ -184,12 +177,13 @@ function winCheck(){
 	
 }
 
-var status_X = '<img src="images/X.png"/> has played.<br/>It is turn for  <img src="images/O.png"/>';
-var status_O = '<img src="images/O.png"/> is done.<br/>  <img src="images/X.png"/> will play now ...';
+var status_X = '<div class="x"> </div> has played.<br/>' +
+'<div style="display:inline;float:left;">It is turn for </div> <div class="o"> </div>';
+var status_O = '<div class="o"> </div> is done.<br/>  <div class="x"> </div> will play now ...';
 function turnCheck(){		
 		if (turn == 0 || turn == 2 || turn == 4 || turn == 6 || turn == 8){   //checks if the boxes are clicked as odd serial or even serial.
 			if(this.value == undefined){  //checks if the boxes are clicked double time...
-				this.setAttribute("style","background-image:url('images/X.png')");   //sets background image for boxes...
+				this.setAttribute("style","background-position: 200% 0");   //sets background image for boxes...
 				turn = turn + 1;	//increases the turn number ...
 				this.value = 2;		//tells that this box is already clicked ...				
 				winCheck();
@@ -200,7 +194,7 @@ function turnCheck(){
 		} else { //comes here when turn number is an odd number...
 			if (turn<9) { //checks if it is under total turn number ( 9 ) ...
 				if (this.value == undefined){  //checks if the boxes are clicked double time...
-				this.setAttribute("style","background-image:url('images/O.png')");
+				this.setAttribute("style","background-position: 100% 0");
 				turn = turn + 1;  //increases the turn number ...
 				this.value = 5;	  //tells that this box is already clicked ...				
 				winCheck();
@@ -210,11 +204,6 @@ function turnCheck(){
 		}
 	}
 	
-function exit(){
-	if (confirm("Do you want to exit ?")){
-		window.close();
-	}
-}
 
 //executes function for rotating the mainboard ......
 window.addEventListener("load", startup);
@@ -231,7 +220,54 @@ box[7].addEventListener("click", turnCheck);
 box[8].addEventListener("click", turnCheck);
 
 
-refreshButton.addEventListener("click", reload);
-exitButton.addEventListener("click", exit);
+resetButton.addEventListener("click", reload);
+
 
 //---------------------------------------------------
+
+
+
+//======================================================
+// functions for drawer opening and closing  -----------
+
+var drawer = "closed";
+var drawerPane = document.getElementById("drawer");
+var menuButton = document.getElementById("menu");
+var gameField = document.getElementById("gamefield");
+var resetButton = document.getElementById("reset");
+var gameButton = document.getElementById("game");
+var settingButton = document.getElementById("settings");
+var scoreButton = document.getElementById("scores");
+var helpButton = document.getElementById("help");
+var aboutButton = document.getElementById("about");
+var exitButton = document.getElementById("exit");
+
+
+var pageHeight = "height:" + window.innerHeight + "px";
+var pageWidth = window.innerWidth;
+var drawerOption = function(){
+  if (drawer == "closed"){
+  drawerPane.setAttribute("style","left:0%;");
+  gameField.setAttribute("style","margin-left:65%;");
+  menuButton.setAttribute("style","background-position: -100% 0%;");
+  drawer = "opened";
+  } else if (drawer == "opened"){
+  drawerPane.setAttribute("style","left:-65%;");
+  gameField.setAttribute("style","margin-left:0%;");
+    menuButton.setAttribute("style","background-position: 0% 0%;");
+  drawer = "closed";
+  }
+};
+
+
+menuButton.addEventListener("click", drawerOption);
+resetButton.addEventListener("click", reload);
+
+
+var exit = function() {
+  if (confirm("Are you sure to exit ?")){
+    window.close();
+  }
+}
+
+exitButton.addEventListener("click",exit);
