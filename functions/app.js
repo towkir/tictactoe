@@ -209,16 +209,9 @@ function turnCheck(){
 window.addEventListener("load", startup);
 
 //executes check while clicking the boxes ......
-box[0].addEventListener("click", turnCheck);
-box[1].addEventListener("click", turnCheck);
-box[2].addEventListener("click", turnCheck);
-box[3].addEventListener("click", turnCheck);
-box[4].addEventListener("click", turnCheck);
-box[5].addEventListener("click", turnCheck);
-box[6].addEventListener("click", turnCheck);
-box[7].addEventListener("click", turnCheck);
-box[8].addEventListener("click", turnCheck);
-
+for (var i = 0; i<box.length; i++){
+    box[i].addEventListener("click", turnCheck);
+}
 
 resetButton.addEventListener("click", reload);
 
