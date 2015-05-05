@@ -227,6 +227,7 @@ var helpField = document.getElementById("helpField");
 var aboutButton = document.getElementById("about");
 var aboutField = document.getElementById("aboutField");
 var exitButton = document.getElementById("exit");
+var gameButton = document.getElementById("game");
 
 var scores = [scoresButton, scoresField];
 var settings = [settingButton, settingField];
@@ -251,11 +252,23 @@ var drawerOption = function(){
 
 menuButton.addEventListener("click", drawerOption);
 resetButton.addEventListener("click", reload);
-
+gameButton.addEventListener("click", drawerOption);
 menuItems[0][0].addEventListener("click",function showMenu(){menuItems[0][1].setAttribute("style","left:0;");drawerOption()});
 menuItems[1][0].addEventListener("click",function showMenu(){menuItems[1][1].setAttribute("style","left:0;");drawerOption()});
 menuItems[2][0].addEventListener("click",function showMenu(){menuItems[2][1].setAttribute("style","left:0;");drawerOption()});
 menuItems[3][0].addEventListener("click",function showMenu(){menuItems[3][1].setAttribute("style","left:0;");drawerOption()});
+
+function closePopMenu(){
+    menuItems[0][1].setAttribute("style","left:100%;");
+    menuItems[1][1].setAttribute("style","left:100%;");
+    menuItems[2][1].setAttribute("style","left:100%;");
+    menuItems[3][1].setAttribute("style","left:100%;");
+    
+};
+var ticks = document.getElementsByClassName("done");
+for(i=0;i<ticks.length;i++){
+    ticks[i].addEventListener("click",closePopMenu);
+}
 
 var exit = function() {
   if (confirm("Are you sure to exit ?")){

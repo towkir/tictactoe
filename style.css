@@ -100,7 +100,7 @@ body {
   background-position: 100% 0;
 }
 
-#menu, #reset, #done {
+#menu, #reset, .done {
   width: 12vw;
 	height: 12vw;
 	float: left;
@@ -108,11 +108,11 @@ body {
   background-size: 400%;  
 }
 
-#reset, #done {
+#reset, .done {
 	background-position: 200% 0;
 	float: right;
 }
-#done {
+.done {
     background-position: 100% 0;
 }
 #game::before, #scores::before, #settings::before, #help::before, #about::before, #exit::before {
