@@ -58,10 +58,12 @@ body {
 
 
 #gamefield {
+    position: relative;
     width: 100vw;
     min-width: 320px;
     height: 100%;
-  transition: .5s;
+    transition: .5s;
+    z-index: 2;
 }
 
 .header {
@@ -98,26 +100,28 @@ body {
   background-position: 100% 0;
 }
 
-#menu, #reset {
+#menu, #reset, #done {
   width: 12vw;
 	height: 12vw;
 	float: left;
-	background-image: url("images/menu_icons.png");
-  background-size: 300%;  
+	background-image: url("images/navigation_icons.png");
+  background-size: 400%;  
 }
 
-#reset {
-	background-position: 100% 0;
+#reset, #done {
+	background-position: 200% 0;
 	float: right;
 }
-
+#done {
+    background-position: 100% 0;
+}
 #game::before, #scores::before, #settings::before, #help::before, #about::before, #exit::before {
   content: "";
   height: 8vw;
   width: 8vw;
   float: left;
   margin-right: 2vw;
-  background-image: url("images/navigation_icons.png");
+  background-image: url("images/menu_icons.png");
   background-size: 600%;
 }
 
@@ -137,20 +141,30 @@ body {
   background-position: -500% 0;
 }
 
+#settingsField, #scoresField, #helpField, #aboutField {
+    background: #424F5A;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 100%;
+    transition: .5s;    
+}
+
 #settingsField {
-  
+  z-index: 3;
 }
 
 #scoresField {
-  
+  z-index: 4;
 }
 
 #helpField {
-  
+  z-index: 5;
 }
 
 #aboutField {
-  
+  z-index: 6;
 }
 
 .board {

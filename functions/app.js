@@ -11,25 +11,14 @@ var resetButton = document.getElementById("reset");
 var exitButton = document.getElementById("exit");
 //this function rotates the board randomly ...
 function rotateBoard() {
-    
-  
-    if (counter < 0.25) {
-        board.setAttribute("style", "transform:rotate(0deg)");
-    } else if (counter < 0.5) {
-        board.setAttribute("style", "transform:rotate(90deg)");
-    } else if (counter < 0.75) {
-        board.setAttribute("style", "transform:rotate(180deg)");
-    } else if (counter < 1) {
-        board.setAttribute("style", "transform:rotate(270deg)");
-    }
+    var rotator = ["transform:rotate(0deg)","transform:rotate(90deg)","transform:rotate(180deg)","transform:rotate(270deg)"];
+        board.setAttribute("style", rotator[Math.floor(Math.random()*4)]);
 }
 
 //puts them two together to load while window loads.......
 function startup() {
     rotateBoard();
 }
-
-
 
 //  this function will check which palyer wins....
 //	when we set the value of each X to 2, wll winning chances are here like this . result of each row/column/slash is 6 when X wins.
@@ -60,14 +49,14 @@ function reload(){
 
 
 function winCheck(){
-	var rowOne  	 		= box[0].value + box[1].value + box[2].value;
-	var rowTwo   	 		= box[3].value + box[4].value + box[5].value;
-	var rowThree  	 		= box[6].value + box[7].value + box[8].value;
-	var colOne  	 		= box[0].value + box[3].value + box[6].value;
-	var colTwo  	 		= box[1].value + box[4].value + box[7].value; 
-	var colThree 	 		= box[2].value + box[5].value + box[8].value;
-	var backSlash 	 		= box[0].value + box[4].value + box[8].value;
-	var forwardSlash 		= box[2].value + box[4].value + box[6].value;
+	var rowOne  	 = box[0].value + box[1].value + box[2].value;
+	var rowTwo   	 = box[3].value + box[4].value + box[5].value;
+	var rowThree  	 = box[6].value + box[7].value + box[8].value;
+	var colOne  	 = box[0].value + box[3].value + box[6].value;
+	var colTwo  	 = box[1].value + box[4].value + box[7].value; 
+	var colThree 	 = box[2].value + box[5].value + box[8].value;
+	var backSlash 	 = box[0].value + box[4].value + box[8].value;
+	var forwardSlash = box[2].value + box[4].value + box[6].value;
 	
 	var X_wins = "X wins the game !";
 	var O_wins = "O wins the game !";
@@ -228,34 +217,45 @@ var drawerPane = document.getElementById("drawer");
 var menuButton = document.getElementById("menu");
 var gameField = document.getElementById("gamefield");
 var resetButton = document.getElementById("reset");
-var gameButton = document.getElementById("game");
+
+var scoresButton = document.getElementById("scores");
+var scoresField = document.getElementById("scoresField");
 var settingButton = document.getElementById("settings");
-var scoreButton = document.getElementById("scores");
+var settingField = document.getElementById("settingsField");
 var helpButton = document.getElementById("help");
+var helpField = document.getElementById("helpField");
 var aboutButton = document.getElementById("about");
+var aboutField = document.getElementById("aboutField");
 var exitButton = document.getElementById("exit");
 
+var scores = [scoresButton, scoresField];
+var settings = [settingButton, settingField];
+var help = [helpButton, helpField];
+var about = [aboutButton, aboutField];
 
-var pageHeight = "height:" + window.innerHeight + "px";
-var pageWidth = window.innerWidth;
+var menuItems = [scores, settings, help, about];
+
 var drawerOption = function(){
   if (drawer == "closed"){
-  drawerPane.setAttribute("style","left:0%;");
+  drawerPane.setAttribute("style","left: 0;");
   gameField.setAttribute("style","margin-left:65%;");
   menuButton.setAttribute("style","background-position: -100% 0%;");
   drawer = "opened";
   } else if (drawer == "opened"){
   drawerPane.setAttribute("style","left:-65%;");
-  gameField.setAttribute("style","margin-left:0%;");
-    menuButton.setAttribute("style","background-position: 0% 0%;");
+  gameField.setAttribute("style","margin-left: 0;");
+    menuButton.setAttribute("style","background-position: 0 0;");
   drawer = "closed";
   }
 };
 
-
 menuButton.addEventListener("click", drawerOption);
 resetButton.addEventListener("click", reload);
 
+menuItems[0][0].addEventListener("click",function showMenu(){menuItems[0][1].setAttribute("style","left:0;");drawerOption()});
+menuItems[1][0].addEventListener("click",function showMenu(){menuItems[1][1].setAttribute("style","left:0;");drawerOption()});
+menuItems[2][0].addEventListener("click",function showMenu(){menuItems[2][1].setAttribute("style","left:0;");drawerOption()});
+menuItems[3][0].addEventListener("click",function showMenu(){menuItems[3][1].setAttribute("style","left:0;");drawerOption()});
 
 var exit = function() {
   if (confirm("Are you sure to exit ?")){
