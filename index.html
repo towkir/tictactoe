@@ -4,75 +4,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
     <title>TicTacToe</title>
-        <meta name="description" content="A tic tac toe game with 2 player mode">
+    <meta name="description" content="A tic tac toe game with 2 player mode">
     <link rel="stylesheet" type="text/css" href="style.css"/>
   </head>
   <body>
-    <div class="drawer" id="drawer">
-     <ul>
-         <li>TicTacToe </li>
-         <li id="game">Game</li>
-         <li id="scores">Scores</li>  
-         <li id="settings">Settings</li>         
-         <li id="help">Help</li>
-         <li id="about">About</li>
-         <li id="exit">Exit</li>
-     </ul>
-    </div>
- <div id="gamefield">
-    <div class="header">
-    	<div id="menu"> </div>
-          TicTacToe
-      	<div id="reset"> </div>
-    </div>
-      
-    <div class="board" id="board">
-       
-      <div class="box"> </div>
-      <div class="box"> </div>
-      <div class="box"> </div>
-      <div class="box"> </div>
-      <div class="box"> </div>
-      <div class="box"> </div>
-      <div class="box"> </div>
-      <div class="box"> </div>
-      <div class="box"> </div>
-      
-    </div>
 
-   
-      <div class="status_box">
-       <span id="status">
-       </span>
-    </div>    
-  </div>
-   
-   <div id="scoresField">
-        <div class="header">
-          <span style="margin-left:3%;"> Scores </span>
-      	<div class="done"> </div>
-        </div>
-    </div>
-   <div id="settingsField">
-        <div class="header">
-          <span style="margin-left:3%;"> Settings </span>
-      	<div class="done"> </div>
-        </div>
-    </div>
-    <div id="helpField">
-        <div class="header">
-          <span style="margin-left:3%;"> Help </span> 
-      	<div class="done"> </div>
-        </div>
-    </div>
-    <div id="aboutField">
-        <div class="header">
-          <span style="margin-left:3%;"> About </span> 
-      	<div class="done"> </div>
-        </div>
-    </div>
-    <script type="text/javascript" src="functions/localforage.js"> </script>
-    <script type="text/javascript" src="functions/app.js"> </script> 
+		<div class="boundary">
+			<div class="board" id="board">
+        <div class="box"> </div>
+        <div class="box"> </div>
+        <div class="box"> </div>
+        <div class="box"> </div>
+        <div class="box"> </div>
+        <div class="box"> </div>
+        <div class="box"> </div>
+        <div class="box"> </div>
+        <div class="box"> </div>      
+      </div>
+		</div>  
+
+    <script type="text/javascript" src="app.js"> </script> 
   </body>
-
 </html>
