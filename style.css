@@ -6,22 +6,22 @@
 }
 
 body {
-  background-color: #424F5A;
-  color: white;
-  overflow: hidden;
+  background-color: transparent;
+  font-family: monospace;
 }
 
+h1 {
+  margin-bottom: 10px;
+}
 
 .boundary {
   width: 500px;
   height: 500px;
-  margin: 50px auto;
 }
 
 .board {
   width: 100vw;
   height: 100vw;
-  margin: 0 auto;
   background-image: url("images/boardback.svg");
   background-size: 100%;
   max-width: 500px;
@@ -34,4 +34,16 @@ body {
   float: left;
   background-image: url("images/players.png");
   background-size: 300%;
+}
+
+#controls {
+  width: 600px;
+  height: 120px;
+}
+
+#tictactoe {
+  display: block;
+  width: 600px;
+  height: 220px;
+  margin: 30px 0;
 }
