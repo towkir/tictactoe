@@ -47,3 +47,20 @@ h1 {
 #controls {
   height: 120px;
 }
+
+#tictactoe table td a {
+  padding: 1px 5px;
+  background: rgba(128, 128, 128, 0.3);
+  border-radius: 2px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+#tictactoe table td a:hover,
+#tictactoe table td a:focus,
+#tictactoe table td a:active {
+  background: rgba(128, 128, 128, 0.5);
+  outline: none;
+  color: inherit;
+}
