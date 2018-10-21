@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TicTacToe</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="A tic tac toe game with 2 player mode">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Zilla+Slab:400,500,600,700">
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <link rel="icon" type="image/x-icon" href="images/icon.png"/>
+</head>
+<body>
+<div class="boundary" id="boundary">
+    <div class="board" id="board">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</div>
+<div id="tictactoe">
+    <h1>Tic Tac Toe</h1>
+    <p>Among all the games, Tic Tac Toe seems to be the simplest, and this one is the simplest of
+        all Tic Tac Toes out there. This is in two player mode, so the computer won't bother you
+        at all. <br/> Have fun with Noughts and Crosses. </p>
+    <br/>
+    <table>
+        <tr>
+            <td>Technology Used:</td>
+            <td>HTML, CSS, JavaScript.</td>
+        </tr>
+        <tr>
+            <td>Difficulty:</td>
+            <td>What ? why would it be difficult ??</td>
+        </tr>
+        <tr>
+            <td>Source Code:</td>
+            <td>See the source code on <a href="https://github.com/towkir/tictactoe" target="_blank">This GitHub
+                Repo</a></td>
+        </tr>
+    </table>
+</div>
+<div id="controls">
+    <h1>Game Controls</h1>
+    <p><b>Reset:</b> Double click on the gamefield to reset to new game.</p>
+</div>
+
+<div id="modal-container">
+    <div class="custom-modal">
+        <h2><span class="player-won"></span> wins</h2>
+        <button type="button" id="reload">Play Again</button>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/app.min.js"></script>
+</body>
+</html>
